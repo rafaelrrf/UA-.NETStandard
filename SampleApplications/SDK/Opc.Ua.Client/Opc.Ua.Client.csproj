@@ -1,11 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net461;netstandard1.3;netstandard2.0</TargetFrameworks>
     <AssemblyName>Opc.Ua.Client</AssemblyName>
     <LangVersion>6</LangVersion>
     <PackageId>Opc.Ua.Client</PackageId>
     <Description>OPC UA Client Class Library</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +20,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
